@@ -152,9 +152,10 @@ nav a:hover::after {
     color: var(--accent1-color);
 } */
 
+
 /* nav a[href="about.html"]::after {
-    width: 100%; */
-}
+    width: 100%;
+} */
 
 .history {
     max-width: 1200px; 
