@@ -148,12 +148,12 @@ nav a:hover::after {
     width: 100%;
 }
 
-nav a[href="about.html"] {
+/* nav a[href="about.html"] {
     color: var(--accent1-color);
-}
+} */
 
-nav a[href="about.html"]::after {
-    width: 100%;
+/* nav a[href="about.html"]::after {
+    width: 100%; */
 }
 
 .history {
