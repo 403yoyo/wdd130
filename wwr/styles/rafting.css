@@ -4,7 +4,10 @@
     --accent1-color: #F59E0B;
     --accent2-color: #39393a;
 }
-
+body{
+    padding: 0;
+    margin: 0;
+}
 .mis{
     font-weight: 900;
     font-family: 'Ubuntu', sans-serif;
@@ -77,13 +80,8 @@ h2{
 color: var(--accent2-color);
 }
 
-.history h1{
-    color: var(--accent1-color);
-}
 
 header {
-    display: grid;
-    grid-template-columns: auto 1fr;
     align-items: center;
     gap: 1rem;
     background-color: var(--primary-color);
@@ -131,29 +129,12 @@ nav a:hover {
 }
 
 
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent1-color);
-    transition: width 0.3s;
-}
+
 
 nav a:hover::after {
     width: 100%;
 }
 
-/* nav a[href="about.html"] {
-    color: var(--accent1-color);
-} */
-
-
-/* nav a[href="about.html"]::after {
-    width: 100%;
-} */
 
 .history {
     max-width: 1200px; 
@@ -277,9 +258,7 @@ footer p {
     }
 }
 
-/*Contact page css*/
-
-
+/*Contact page side*/
 
 
 .contact-main {
@@ -359,7 +338,7 @@ footer p {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--accent1-color);
     border-radius: 4px;
     font-family: 'Ubuntu', sans-serif;
     transition: border-color 0.3s;
@@ -451,5 +430,380 @@ footer p {
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+
+/* Home page css side */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent1-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 115, 115, 0.3);
+    z-index: 1;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent1-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+.cta-button:focus,
+.form-button:focus {
+    outline: 2px solid var(--accent1-color);
+    outline-offset: 2px;
+    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+
+.newsletter-section {
+    background-color: rgba(155, 156, 242, 0.1);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.newsletter-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.newsletter-container h2 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group input:focus {
+    border-color: var(--accent1-color);
+    outline: none;
+}
+
+.form-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-button:hover {
+    background-color: #1e5e5e;
+    transform: translateY(-2px);
+}
+
+.features-section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-image-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.feature-card h3 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.feature-card p {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--accent2-color);
+    padding: 0 1rem 1.5rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+.hero-content {
+    z-index: 2; 
+    pointer-events: auto;
+}
+
+.hero-overlay {
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cta-button {
+    position: relative;
+    z-index: 3;
+}
+
+/* trips page css side */
+.trips-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.trips-main h1 {
+    color: var(--accent1-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cta-section {
+    background-color: rgba(155, 156, 242, 0.1);
+    padding: 3rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.cta-content h2 {
+    color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--accent2-color);
+    margin-bottom: 1.5rem;
+}
+
+.featured-trips {
+    margin-bottom: 4rem;
+}
+
+.featured-trips h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.trip-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.trip-info {
+    padding: 1.5rem;
+}
+
+.trip-info h3 {
+    color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.trip-info p {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--accent2-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.trip-info ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.trip-info li {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--accent2-color);
+    margin-bottom: 0.5rem;
+}
+
+.trip-table-section {
+    margin-bottom: 3rem;
+}
+
+.trip-table-section h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.trips-table th,
+.trips-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.trips-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.trips-table tr:nth-child(even) {
+    background-color: rgba(155, 156, 242, 0.1);
+}
+
+.trips-table tr:hover {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+.wireframe-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--accent1-color);
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+}
+
+.wireframe-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trips-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem;
     }
 }
